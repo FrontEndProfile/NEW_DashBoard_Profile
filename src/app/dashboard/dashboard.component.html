@@ -1,0 +1,131 @@
+<!-- <span *ngIf="showAdd"> -->
+    <div class="container my-5" *ngFor="let data of dashBoardData |async">
+        <div class="row justify-content-between align-items-start mb-3">
+            <div class="col-12">
+                <div class="profile_banner shadow-sm"></div>
+                <div class="profile_frame"></div>
+            </div>
+        </div>
+        <div class="row mb-5">
+            <div class="col">
+                <div class="profile_name">{{data.ProfileName}}</div>
+                <div class="profile_head">{{data.ProfileHead}}</div>
+            </div>
+        </div>
+        <div class="row edit_btns">
+            <div class="col">
+                <a routerLink="/edit-profile" class="rounded-pill px-5 py-2 text-white bg-primary text-decoration-none shadow btn fw-medium" (click)="updateData(data.id)">Edit Profile</a>
+    
+                <a routerLink="/edit-profile" class="rounded-pill px-5 py-2 text-primary bg-white text-decoration-none shadow btn btn-outline-primary fw-medium">Following</a>
+            </div>
+        </div>
+    
+        <!-- NEXT  -->
+        <div class="row profile_data_sec">
+            <div class="col">
+                <!-- <nav>
+                    <ul class="list-unstyled p-0 m-0">
+                        <li><a href="#" class="btn">ok</a></li>
+                    </ul>
+                </nav> -->
+                <nav class="custom_tabs">
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                      <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">About</button>
+                      <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Info</button>
+                      <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>
+                    </div>
+                  </nav>
+                  <div class="tab-content custom_tab_content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
+                        {{data.ProfileMessage}}
+                    </div>
+                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
+                        <div class="mb-3">
+                            <h5 class="fs-5 mb-1">My Location</h5>
+                            <p class="date_birth">{{data.ProfileLocation}}</p>
+                        </div>
+                        <div class="mb-3">
+                            <h5 class="fs-5 mb-1">My Age</h5>
+                            <p class="date_birth">04 June 2023</p>
+                        </div>
+                        <div class="mb-3">
+                            <h5 class="fs-5 mb-1">Date of Birth</h5>
+                            <p class="date_birth">04 June 2023</p>
+                        </div>
+                        <div class="mb-3">
+                            <h5 class="fs-5 mb-1">My Education</h5>
+                            <p class="school">{{data.ProfileEduction}}</p>
+                            <p class="date_birth">04 June 2023</p>
+                        </div>
+                        
+                    </div>
+                    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
+                        <div class="mb-3">
+                            <h5 class="fs-5 mb-1">My Portfolio</h5>
+                            <a href="#" class="text-primary btn px-0">website</a>
+                        </div>
+                        <div class="mb-3">
+                            <h5 class="fs-5 mb-1">My Contact</h5>
+                            <a href="#" class="text-primary btn px-0">{{data.ProfileEduction}}</a>
+                        </div>
+                    </div>
+                    
+                  </div>
+                  
+            </div>
+        </div>
+    
+    </div>
+<!-- </span> -->
+
+
+
+<!-- <div class="container" *ngIf="showEdit">
+    <div class="row">
+        <div class="col-md-6 mx-auto my-5">
+            <h3 class="text-primary fs-2 fw-medium mb-5">Edit Profile</h3>
+            <form  [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+                <div class="mb-3">
+                  <label for="name" class="form-label">Name</label>
+                  <input required type="text" class="form-control" id="name" aria-describedby="name" formControlName="ProfileName">
+                </div>
+                <div class="mb-3">
+                  <label for="head" class="form-label">About Head</label>
+                  <input required type="text" class="form-control" id="head" formControlName="ProfileHead">
+                </div>
+                <div class="mb-3">
+                    <label for="head" class="form-label">About Me</label>
+                    <textarea name="" id="" cols="30" rows="5" class="form-control" formControlName="ProfileMessage"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="experience" class="form-label">My Experience</label>
+                    <input required type="text" class="form-control" id="experience" placeholder="Experience in Year's" formControlName="ProfileExperience">
+                </div>
+                <div class="mb-3">
+                    <label for="location" class="form-label">My Location</label>
+                    <input required type="text" class="form-control" id="location" placeholder="Location" formControlName="ProfileLocation">
+                </div>
+                <div class="mb-3">
+                    <label for="education" class="form-label">My Education</label>
+                    <input required type="text" class="form-control" id="education" placeholder="Education" formControlName="ProfileEduction">
+                </div>
+                <div class="mb-3">
+                    <label for="contact" class="form-label">My Contact</label>
+                    <input required type="text" class="form-control" id="contact" placeholder="Contact" formControlName="ProfileContact">
+                </div>              
+                <ul *ngFor="let data of dashBoardData |async" class="m-0 p-0">
+                    <button type="submit" (click)="updateData(data.id)" class="btn btn-primary">Update</button>
+                    <button type="submit" (click)="close()" class="btn btn-primary ms-3">close</button>
+                  </ul>
+               
+              </form>
+
+
+              <ul *ngFor="let data of dashBoardData |async">
+                <li>{{data.ProfileName}}</li>
+                <button (click)="updateData(data.id)">update</button>
+              </ul>
+              
+        </div>
+    </div>
+</div> -->

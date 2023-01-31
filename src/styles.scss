@@ -1,0 +1,76 @@
+/* You can add global styles to this file, and also import other style files */
+.nav_profile {
+    $area:39px;
+    width: $area;
+    height: $area;
+    background: teal;
+    border-radius: 50%;
+
+}
+.profile_banner {
+    width: 100%;
+    min-height: 150px;
+    background: teal;
+    border-radius: 4px;
+
+}
+.profile_frame {
+    $frame :150px;
+    width: $frame;
+    height: $frame;
+    // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 22px;
+    border-radius: 50%;
+    background: white;
+    margin-top: -75px;
+    margin-inline: 22px;
+}
+.profile_name {
+    margin-inline: 22px;
+    font-size: 28px;
+    font-weight: 600;
+}
+.profile_head {
+    margin-inline: 22px;
+    font-size: 18px;
+    margin-top: 5px;
+}
+.edit_btns {
+    .btn {
+        margin-inline: 22px;
+    }
+    margin-bottom: 40px;
+}
+.profile_data_sec {
+    border-top: 2px solid #ededed;
+}
+.custom_tabs {
+    .nav-tabs {
+        border: none;
+        padding-block: 5px;
+
+        .nav-link {
+            border: none;
+            border-bottom: 1px solid transparent;
+            color: black;
+        }
+        .nav-link.active {
+            color: teal;
+            border-bottom: 1px solid teal;
+        }
+    }
+    margin-bottom: 33px;
+
+}
+.custom_tab_content {
+    width: 70%;
+}
+.date_birth {
+    color: #6f6f6f;
+    font-size: 15px;
+}
+.school {
+    font-size: 18px;
+    color: black;
+    margin-bottom: 0px;
+}

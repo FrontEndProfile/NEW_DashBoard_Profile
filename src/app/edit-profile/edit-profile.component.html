@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mx-auto my-5">
+            <h3 class="text-primary fs-2 fw-medium mb-5">Edit Profile</h3>
+            <form  [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+                <div class="mb-3">
+                  <label for="name" class="form-label">Name</label>
+                  <input required type="text" class="form-control" id="name" aria-describedby="name" formControlName="ProfileName">
+                </div>
+                <div class="mb-3">
+                  <label for="head" class="form-label">About Head</label>
+                  <input required type="text" class="form-control" id="head" formControlName="ProfileHead">
+                </div>
+                <div class="mb-3">
+                    <label for="head" class="form-label">About Me</label>
+                    <textarea name="" id="" cols="30" rows="5" class="form-control" formControlName="ProfileMessage"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="experience" class="form-label">My Experience</label>
+                    <input required type="text" class="form-control" id="experience" placeholder="Experience in Year's" formControlName="ProfileExperience">
+                </div>
+                <div class="mb-3">
+                    <label for="location" class="form-label">My Location</label>
+                    <input required type="text" class="form-control" id="location" placeholder="Location" formControlName="ProfileLocation">
+                </div>
+                <div class="mb-3">
+                    <label for="education" class="form-label">My Education</label>
+                    <input required type="text" class="form-control" id="education" placeholder="Education" formControlName="ProfileEduction">
+                </div>
+                <div class="mb-3">
+                    <label for="contact" class="form-label">My Contact</label>
+                    <input required type="text" class="form-control" id="contact" placeholder="Contact" formControlName="ProfileContact">
+                </div>              
+                <ul *ngFor="let data of dashBoardData |async" class="m-0 p-0">
+                    <button type="submit" (click)="updateData(data.id)" class="btn btn-primary">Update</button>
+                  </ul>
+               
+              </form>
+    
+    
+              <!-- <ul *ngFor="let data of dashBoardData |async">
+                <li>{{data.ProfileName}}</li>
+                <button (click)="updateData(data.id)">update</button>
+              </ul> -->
+              
+        </div>
+    </div>
+</div>
