@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { GoogleAuthProvider } from "firebase/auth";
+
+
+const provider = new GoogleAuthProvider();
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

@@ -74,3 +74,22 @@
     color: black;
     margin-bottom: 0px;
 }
+.logo {
+    mix-blend-mode: multiply;
+}
+
+
+.admin_view {
+    iframe.view_chlid {
+        #document {
+            .navbar {
+                display: none !important;
+                background: red !important;
+            }
+            body {
+                background: red !important;
+            }
+        }
+        
+    }
+}

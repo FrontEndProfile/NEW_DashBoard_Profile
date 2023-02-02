@@ -1,4 +1,5 @@
 export const environment = {
+    
     production: false,
     firebase: {
         projectId: 'profile-website-f426a',
