@@ -14,6 +14,8 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 // import { AngularFireModule } from '@angular/fire/compat';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HomeContentComponent } from './admin/home-content/home-content.component';
+import { AboutContentComponent } from './admin/about-content/about-content.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     AboutComponent,
     NavbarComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    HomeContentComponent,
+    AboutContentComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +35,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     provideFirestore(() => getFirestore()),
     // AngularFireModule.initializeApp(environment.firebase),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

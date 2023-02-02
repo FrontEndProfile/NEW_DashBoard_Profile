@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <!-- <h2 class="my-5">Home Page</h2> -->
+
+            <!-- <hr>
+            <h3 class="my-3">Add Data</h3>
+            <hr class="mb-5"> -->
+            <!-- Create Content Form -->
+            <!-- <form [formGroup]="Hero" (ngSubmit)="heroContent()">
+                <div class="mb-3">
+                  <label for="hero-tittle" class="form-label">Hero Title</label>
+                  <input type="text" class="form-control" id="hero-tittle" aria-describedby="none" formControlName="hero_title">
+                </div>
+                <div class="mb-3">
+                  <label for="hero-content" class="form-label">Hero Content</label>
+                  <input type="text" class="form-control" id="hero-content" aria-describedby="none" formControlName="hero_content">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            <br>
+            <br>
+            <br> -->
+
+
+
+            <!-- <hr class=""> -->
+            <h3 class="my-3">Update Content</h3>
+            <hr class="mb-5">
+            <!-- Create Content Form -->
+            <form [formGroup]="HeroGet" (ngSubmit)="heroContentEdit()">
+                <div class="mb-3">
+                  <label for="hero-tittle" class="form-label">Hero Title</label>
+                  <input type="text" class="form-control" id="hero-tittle" aria-describedby="none" formControlName="hero_title">
+                </div>
+                <div class="mb-3">
+                  <label for="hero-content" class="form-label">Hero Content</label>
+                  <input type="text" class="form-control" id="hero-content" aria-describedby="none" formControlName="hero_content">
+                </div>
+                
+                <button type="submit" *ngFor="let data of heroData |async" (click)="updateData(data.id)" class="btn btn-primary mb-4">Update</button>
+            </form>
+            <!-- <hr> -->
+
+
+        </div>
+    </div>
+    <div class="row mb-5">
+      <div class="col-12 py-4 bg-light shadow rounded-5 rounded border border-primary">
+        <h3 class="mb-4 text-primary text-center fs-2">Preview Live</h3>
+        <iframe width="100%" height="500" src="http://localhost:4200/home#hero" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+</div>

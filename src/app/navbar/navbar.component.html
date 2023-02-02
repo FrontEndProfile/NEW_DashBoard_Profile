@@ -12,8 +12,20 @@
           <li class="nav-item">
             <a class="nav-link" routerLink="/about">About Me</a>
           </li>
+          
         </ul>
         <ul class="navbar-nav ms-auto">
+          <div class="dropdown me-5">
+            <a class="btn btn-light btn-outline-dark dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Admin
+            </a>
+          
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="/Admin-home">Home Admin</a></li>
+              <li><a class="dropdown-item" routerLink="/Admin-about">About Admin</a></li>
+              <li><a class="dropdown-item" routerLink="/Admin-home">Other Admin</a></li>
+            </ul>
+          </div>
             <li class="nav-item">
               <!-- <a class="nav-link" routerLink="/dashboard">Dashboard</a> -->
               <a routerLink="/dashboard">
@@ -22,6 +34,7 @@
                 </div>
               </a>
             </li>
+            
           </ul>
       </div>
     </div>

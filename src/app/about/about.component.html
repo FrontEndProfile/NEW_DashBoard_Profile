@@ -1,1 +1,17 @@
-<h2 class="fs-1 my-5 py-5">About PAGE</h2>
+<div class="container">
+    <div class="row" *ngFor="let data of aboutData|async">
+        <div class="col">
+            <div class="px-4 py-3 my-5 text-center" id="about_view">
+                <h1 class="display-5 fw-bold" >{{data.about_title}}</h1>
+                <div class="col-lg-6 mx-auto">
+                  <p class="lead mb-4">
+                    {{data.about_content}}
+                  </p>
+                  <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                    <button type="button" class="btn btn-primary btn-lg px-4 gap-3" routerLink="/home">Go Back</button>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>

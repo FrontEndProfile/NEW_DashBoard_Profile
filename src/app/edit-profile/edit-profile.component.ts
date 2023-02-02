@@ -12,7 +12,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./edit-profile.component.scss']
 })
 export class EditProfileComponent implements OnInit {
-  // @Output() updateData = new EventEmitter<string>();
   dashBoardData! : Observable<any>;
   constructor(private firestore: Firestore , private router : Router) { }
 
@@ -28,9 +27,9 @@ export class EditProfileComponent implements OnInit {
   });
   
   onSubmit() {
+    // // CREATE DATA FROM FORM REACTIVE
     // console.warn(this.profileForm.value);
     // const collectionInstance = collection(this.firestore, 'dashboard_profile');
-    // // CREATE DATA FROM FORM REACTIVE
     // addDoc(collectionInstance, this.profileForm.value)
     //   .then(() => {
     //     console.log('Data Saved Success');
@@ -39,7 +38,7 @@ export class EditProfileComponent implements OnInit {
     //     console.warn(err);
     //     console.log('wronged');
     //   })
-    // END 
+    // // END 
 
   }
 
